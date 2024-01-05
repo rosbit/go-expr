@@ -1,0 +1,8 @@
+envs:
+  a: 1
+  b: "test"
+
+funcs:
+  add:
+    arg-names: [a, b, c]
+    expr: "a + b + c"
