@@ -110,17 +110,7 @@ func (e *XExpr) setEnv(vars map[string]interface{}) (err error) {
 			continue
 		}
 
-		vv := reflect.ValueOf(v)
-		switch vv.Kind() {
-		case reflect.Func:
-			goFunc, er := bindGoFunc(k, v)
-			if er != nil {
-				return er
-			}
-			e.Envs[k] = goFunc
-		default:
-			e.Envs[k] = v
-		}
+		e.Envs[k] = v
 	}
 	return
 }
