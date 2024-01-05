@@ -76,7 +76,7 @@ var add func(int, int)int
 
 func main() {
   ctx := ex.New()
-  if err := ctx.LoadFile("a.py", nil); err != nil {
+  if err := ctx.LoadFile("a.yaml", nil); err != nil {
      fmt.Printf("%v\n", err)
      return
   }
