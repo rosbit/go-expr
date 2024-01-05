@@ -109,15 +109,24 @@ func adder(a1 float64, a2 float64) float64 {
 func main() {
   ctx := ex.New()
 
-  err := ctx.SetEnv(map[string]interface{}{
-     "adder": adder
-  })
-  if err != nil {
+  if err := ctx.LoadFile("b.yaml", map[string]interface{}{
+     "adder": adder,
+  }); err != nil {
      // error handler
      return
   }
-  res, err := ctx.Eval("adder(10, 20)", nil)  // expr containing code calling "adder"
+  res, _ := ctx.CallFunc("add", 10, 2)
+  fmt.Println("result is:", res)
 }
+```
+
+In Expr code, one can call the registered function directly. There's the example `b.yaml`
+
+```yaml
+funcs:
+  add:
+    arg-names: [A, B]
+    expr: "adder(A, B)"  # the function "adder" is implmented in Go.
 ```
 
 ### Status
