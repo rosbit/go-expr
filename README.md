@@ -16,7 +16,7 @@ We make use of `YAML` syntax to declare `Expr` functions. e.g., Function `add` i
 funcs:
   add:
     arg-names: [A, B]
-    expr: "A + B"
+    expr: A + B
 
   other-funcs:
     ..
@@ -58,7 +58,7 @@ Suppose there's a Expr file named `a.yaml` like this:
 funcs:
   add:
     arg-names: [A, B]
-    expr: "A + B"
+    expr: A + B
 
 ```
 
@@ -126,7 +126,7 @@ In Expr code, one can call the registered function directly. There's the example
 funcs:
   add:
     arg-names: [A, B]
-    expr: "adder(A, B)"  # the function "adder" is implmented in Go.
+    expr: adder(A, B)  # the function "adder" is implmented in Go.
 ```
 
 ### Status
