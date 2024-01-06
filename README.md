@@ -15,14 +15,14 @@ We make use of `YAML` syntax to declare `Expr` functions. e.g., Function `add` i
 ```yaml
 funcs:
   add:
-    arg-names: [A, B]
+    params: [A, B]
     expr: A + B
 
   other-funcs:
     ..
 ```
 
-`arg-names` are argument variable names for function. `expr` is the body of function, is just the `Expr` expressions.
+`params` are parameter variable names for function. `expr` is the body of function, is just the `Expr` expressions.
 
 ### Usage
 
@@ -57,7 +57,7 @@ Suppose there's a Expr file named `a.yaml` like this:
 ```yaml
 funcs:
   add:
-    arg-names: [A, B]
+    params: [A, B]
     expr: A + B
 
 ```
@@ -125,7 +125,7 @@ In Expr code, one can call the registered function directly. There's the example
 ```yaml
 funcs:
   add:
-    arg-names: [A, B]
+    params: [A, B]
     expr: adder(A, B)  # the function "adder" is implmented in Go.
 ```
 

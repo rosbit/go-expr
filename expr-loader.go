@@ -1,6 +1,7 @@
 package ex
 
 import (
+	"github.com/expr-lang/expr"
 	"gopkg.in/yaml.v2"
 	"os"
 	"fmt"
@@ -35,6 +36,10 @@ func checkMust(script *exprScript) (err error) {
 		}
 		if len(f.Expr) == 0 {
 			err = fmt.Errorf("func %s expr expected", fn)
+			return
+		}
+		if f.prg, err = expr.Compile(f.Expr, expr.AllowUndefinedVariables()); err != nil {
+			err = fmt.Errorf("failed to compile func %s: %v\n", fn, err)
 			return
 		}
 	}

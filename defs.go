@@ -1,8 +1,13 @@
 package ex
 
+import (
+	"github.com/expr-lang/expr/vm"
+)
+
 type fn struct {
-	ArgNames []string `yaml:"arg-names"`
+	Params []string
 	Expr string
+	prg *vm.Program
 }
 
 type exprScript struct {

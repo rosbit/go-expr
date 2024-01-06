@@ -49,10 +49,6 @@ func (e *XExpr) Eval(script string, vars map[string]interface{}) (res interface{
 }
 
 func (e *XExpr) makeEnvs(vars map[string]interface{}) (map[string]interface{}) {
-	if len(vars) == 0 {
-		return e.exprScript.Envs
-	}
-
 	envs := make(map[string]interface{})
 	for k, v := range e.Envs {
 		envs[k] = v

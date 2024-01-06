@@ -4,5 +4,5 @@ envs:
 
 funcs:
   add:
-    arg-names: [a, b, c]
+    params: [a, b, c]
     expr: "a + b + c"
