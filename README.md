@@ -1,4 +1,4 @@
-# go-expr, an extending of expr-lange
+# go-expr, an extending of expr-lang
 
 [Expr](https://github.com/expr-lang/expr) is a Go-centric expression language designed to deliver dynamic
 configurations with unparalleled accuracy, safety, and speed
